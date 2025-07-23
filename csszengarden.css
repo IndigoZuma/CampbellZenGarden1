@@ -1,0 +1,344 @@
+@charset "UTF-8";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ========================================
+   CSS Zen Garden: Revised, Validated CSS
+   ======================================== */
+
+/* 1. RESET & FOUNDATION */
+* { box-sizing: border-box; }
+
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: #2d3e2d;
+  background: url('../img/sand.jpg') center center fixed no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(248,250,245,0.18) 100%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* 2. MAIN CONTAINER */
+.page-wrapper {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+}
+
+/* 3. HEADER & NAVIGATION */
+header {
+  position: relative;
+  background: rgba(255,255,255,0.88);
+  border-bottom: 3px solid #8fbc8f;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+  z-index: 100;
+}
+
+header::before,
+header::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 60px;
+  height: 60px;
+  background: url('../img/bamboo.jpg') no-repeat center center;
+  background-size: cover;
+  opacity: 0.7;
+  z-index: 1;
+  border-radius: 8px;
+  transform: translateY(-50%);
+}
+header::before { left: 20px; }
+header::after { right: 20px; transform: translateY(-50%) scaleX(-1); }
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 1.8rem 0;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+nav li { margin: 0; }
+nav a {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  color: #2d5a2d;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-radius: 25px;
+  transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+  position: relative; z-index: 2;
+}
+nav a:hover, nav a:focus {
+  background: #e8f5e8;
+  color: #1a4a1a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(141,188,141,0.3);
+  outline: 2px solid #8fbc8f;
+  outline-offset: 2px;
+}
+
+/* 4. HERO SECTION (Flower, 1:1) */
+.intro {
+  position: relative;
+  text-align: center;
+  padding: 3rem 2rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.intro::before {
+  content: '';
+  display: block;
+  width: 320px;
+  height: 320px;
+  max-width: 90vw;
+  max-height: 90vw;
+  margin: 2rem auto 3rem;
+  background: url('../img/flower.jpg') no-repeat center center;
+  background-size: cover;
+  border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.18);
+  filter: saturate(1.15) brightness(1.08) contrast(1.05);
+  border: 2px solid rgba(255,255,255,0.3);
+}
+@media (max-width: 400px) {
+  .intro::before {
+    width: 90vw;
+    height: 90vw;
+  }
+}
+.intro h1 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: #2d5a2d;
+  margin: 0 0 1rem;
+  text-shadow: 2px 2px 4px rgba(255,255,255,0.9);
+}
+.intro h2 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #5a7a5a;
+  margin: 0 0 2rem;
+  font-style: italic;
+}
+
+/* 5. MAIN CONTENT */
+.main {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+.explanation, .participation, .benefits, .requirements {
+  background: rgba(255,255,255,0.94);
+  margin: 3rem 0;
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.1);
+  border: 1px solid rgba(143,188,143,0.3);
+}
+.main h3 {
+  font-size: 1.75rem;
+  color: #2d5a2d;
+  margin: 0 0 1.5rem;
+  font-weight: 600;
+  border-bottom: 3px solid #8fbc8f;
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+.main p { margin: 0 0 1.25rem; color: #3a4a3a; line-height: 1.7;}
+.main a {
+  color: #4a7a4a; text-decoration: underline; font-weight: 500;
+  transition: color 0.3s;
+}
+.main a:hover, .main a:focus {
+  color: #2d5a2d;
+  background: rgba(143,188,143,0.1);
+  padding: 2px 4px;
+  border-radius: 3px;
+  text-decoration: none;
+  outline: 2px solid #8fbc8f;
+}
+
+/* 6. SIDEBAR */
+.sidebar {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem 4rem;
+}
+.wrapper, .design-selection, .design-archives, .zen-resources {
+  background: rgba(248,250,245,0.92);
+  margin: 2rem 0;
+  padding: 2rem;
+  border-radius: 12px;
+  border-left: 5px solid #8fbc8f;
+}
+.sidebar h3 {
+  font-size: 1.5rem;
+  color: #2d5a2d;
+  margin: 0 0 1rem;
+  font-weight: 600;
+}
+.sidebar ul { list-style: none; padding: 0; margin: 0; }
+.sidebar li {
+  margin: 0.75rem 0;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(143,188,143,0.2);
+}
+.sidebar a {
+  color: #4a7a4a;
+  text-decoration: none;
+  font-weight: 500;
+  display: block;
+  padding: 0.25rem 0;
+  transition: all 0.3s;
+}
+.sidebar a:hover, .sidebar a:focus {
+  color: #2d5a2d;
+  padding-left: 1rem;
+  border-left: 3px solid #8fbc8f;
+  outline: none;
+}
+
+/* 7. DECORATIVE ELEMENTS (Pebbles/Bamboo 1:1 squares) */
+.main::after {
+  content: '';
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  width: 100px; height: 100px;
+  background: url('../img/pebbles.jpg') no-repeat center center;
+  background-size: cover;
+  opacity: 0.65;
+  z-index: 1;
+  pointer-events: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+@media (min-width: 1200px) {
+  body::after {
+    content: '';
+    position: fixed;
+    right: 2rem; top: 50%;
+    width: 80px; height: 80px;
+    background: url('../img/bamboo.jpg') no-repeat center center;
+    background-size: cover;
+    opacity: 0.4;
+    z-index: 1;
+    pointer-events: none;
+    border-radius: 10px;
+    transform: translateY(-50%);
+  }
+}
+
+/* 8. RESPONSIVE STYLES */
+@media (max-width: 768px) {
+  header::before, header::after { width: 50px; height: 50px; }
+  header::before { left: 10px; }
+  header::after { right: 10px; }
+  nav ul { padding: 1.5rem 0; gap: 0.25rem; }
+  nav a { padding: 0.5rem 1rem; font-size: 1rem; }
+  .intro { padding: 2rem 1rem 1rem; }
+  .intro::before { width: 220px; height: 220px; max-width: 90vw; max-height: 90vw;}
+  .main { padding: 0 1rem; }
+  .explanation,.participation,.benefits,.requirements { padding: 1.5rem; margin: 2rem 0;}
+  .sidebar { padding: 0 1rem 2rem; }
+  .main::after { width: 70px; height: 70px; bottom: 1rem; left: 1rem;}
+}
+@media (max-width: 480px) {
+  nav ul { flex-direction: column; gap: 0.5rem; }
+  .intro h1 { font-size: 2rem; }
+  .intro h2 { font-size: 1.1rem; }
+  .main h3 { font-size: 1.5rem; }
+  .intro::before { width: 90vw; height: 90vw; }
+}
+
+/* 9. ACCESSIBILITY */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+:focus-visible {
+  outline: 3px solid #8fbc8f; outline-offset: 2px; border-radius: 3px;
+}
+
+/* 10. HIGH CONTRAST MODE (validator-compliant syntax) */
+@media (prefers-contrast: more) {
+  body { background: #fff; }
+  .explanation, .participation, .benefits, .requirements {
+    background: #fff;
+    border: 2px solid #000;
+  }
+  nav a:hover, nav a:focus {
+    background: #000; color: #fff;
+  }
+}
+
+/* 11. PRINT STYLES */
+@media print {
+  body::before, body::after, .main::after, header::before, header::after, .intro::before { display: none; }
+  body { background: white; color: black; }
+  .explanation,.participation,.benefits,.requirements {
+    background: white;
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+}
